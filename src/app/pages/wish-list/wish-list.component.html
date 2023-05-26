@@ -1,0 +1,43 @@
+<ng-container *ngIf="wishList.length > 0; else elseTemplate">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let book of wishList">
+        <div class="book-card" *ngIf="book.inWishList">
+            <div id="book-img" class="book-card_img">
+                <img [src]="book.image" alt="">
+                <i class="bi bi-heart-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Remove from wishlist" (click)="onHeartClick ( book )"></i>
+            </div>
+            <div class="book-card_content">
+                <div class="book-card_title-section">
+                    <h5 class="book-card_title text-center">{{ book.title }}</h5>
+                </div>
+                <div class="book-card_bottom-section">
+                    <div class="space-between">
+                    </div>
+                    <hr>
+                    <div class="space-between">
+                        <div class="book-card_price">
+                            <span>{{ book.price }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center text-center">
+      <div class="col-6">
+        <div class="card text-dark bg-light mb-3">
+          <div class="card-header">Your wish list is empty</div>
+          <div class="card-body">
+            <p class="card-text">Select a book from the available book list and read it later.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+

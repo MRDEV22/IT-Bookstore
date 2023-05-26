@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap);
 
+body {
+    background: #f9f9f9;
+    font-family: "roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
 .book-card {
     background: #fff;
     border-radius: 5px;
@@ -116,7 +125,7 @@
 .book-card .book-card_content .book-card_bottom-section .book-card_price {
     font-size: 28px;
     font-weight: 500;
-    color: #F47A00;
+    color: #000000;
 }
 
 .book-card .book-card_content .book-card_bottom-section .book-card_order-count {

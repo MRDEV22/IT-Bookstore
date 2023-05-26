@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-6">
+      <div class="mt-4 p-5 bg-light rounded">
+        <h1 class="text-primary text-center"> Welcome to {{ appTitleService.getAppTitle() }} </h1>
+        <h4 class="text- text-center">IT, Programming and Computer Science Books</h4>
+      </div>
+    </div>
+    <div class="col-6">
+      <div id="card-img" class="card bg-dark text-dark">
+        <img src="/assets/itbookstore.png" class="card-img" alt="...">
+        <div class="card-img-overlay">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="onlineStatusService.getStatus() else elseTemplate">
+  <h4 class="text- text-left mt-5">New Available Books</h4>
+  <app-books-list></app-books-list>
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center text-center">
+      <div class="col-6">
+        <div class="card text-white bg-warning mb-3">
+          <div class="card-header">No internet connection</div>
+          <div class="card-body">
+            <p class="card-text">Please check your internet connection</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

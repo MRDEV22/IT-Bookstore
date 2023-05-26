@@ -1,0 +1,10 @@
+#banner{
+  background-image: url("/assets/itbookstore.png");
+  width: 70%;
+  height: 50%;
+  background-size: cover;
+}
+
+#card-img{
+  border: none;
+}
